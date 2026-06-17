@@ -1,2 +1,25 @@
+$primary: #6C63FF;
+$secondary: #111B5E;
+$success: #22C55E;
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+.popup-overlay .card {
+  width: 600px;
+  max-width: 90vw;
+}

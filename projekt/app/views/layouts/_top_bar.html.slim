@@ -1,0 +1,11 @@
+.nav.navbar.navbar-expand-lg.bg-body-tertiary
+  .d-flex.col-2
+    = image_tag "logo.png", alt: "Logo", class: "logo"
+  .d-flex.col-8
+    p test
+  .d-flex.col-2
+    - if current_user
+      p Hello, #{current_user.user_name}!
+      / = link_to "Logout", logout_path, method: :delete, class: "btn btn-secondary"
+    - else
+      = link_to "Login", new_session_path, class: "btn btn-primary"

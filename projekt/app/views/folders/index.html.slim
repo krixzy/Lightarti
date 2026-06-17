@@ -1,0 +1,13 @@
+= turbo_frame_tag "folder" do
+  .card 
+    .card-header
+      h2 Folders
+      - folder_id = "folder-list"
+      = link_to "New Folder", new_folder_path(dom_id: folder_id, format: :turbo_stream), class: "btn btn-primary", data: { turbo_prefetch: false }
+    .card-body.overflow-auto style="max-height: 80vh;"
+      = turbo_frame_tag folder_id do
+        .list-group
+          - @folders.each do |folder|
+            = turbo_frame_tag dom_id(folder), class: "d-flex flex-column align-items-end col-12" do
+              = render "folder_item", folder: folder, folder_open: false 
+        

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = content_for(:title) || "Projekt"
+    title = content_for(:title) || "LightArti"
     meta name="viewport" content="width=device-width,initial-scale=1"
     meta name="apple-mobile-web-app-capable" content="yes"
     meta name="mobile-web-app-capable" content="yes"
@@ -22,4 +22,5 @@ html
     = javascript_importmap_tags
 
   body
+    = render "layouts/top_bar" unless current_page?(new_session_path) || current_page?(new_user_path)
     = yield

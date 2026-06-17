@@ -1,0 +1,7 @@
+- if @dom_id == "folder-list"
+  = turbo_stream.prepend @dom_id do
+    = render "folder_add_form", folder: @folder
+-else
+  = turbo_stream.append @dom_id do
+    = render "folder_add_form", folder: @folder
+

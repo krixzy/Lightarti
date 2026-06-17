@@ -1,0 +1,6 @@
+ .d-flex.col-12.justify-content-between.shadow-sm
+  - if folder_open
+    = link_to "📂 #{folder.name}", close_folders_path(folder, format: :turbo_stream), class: "btn decoration-none", data: { turbo_prefetch: false }
+  -else
+    = link_to "📁 #{folder.name}", folder_path(folder, format: :turbo_stream), class: "btn decoration-none", data: { turbo_prefetch: false }
+  = link_to "+", new_folder_path(parent_id: folder.id, dom_id: dom_id(folder), format: :turbo_stream), class: "btn decoration-none", data: { turbo_prefetch: false }

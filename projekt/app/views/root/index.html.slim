@@ -1,3 +1,10 @@
-.d-flex.col-12.justify-content-center
-  h1 Root#index
-  p Find me in app/views/root/index.html.slim
+= turbo_frame_tag "popup", class: "d-flex flex-column align-items-center" do
+.d-flex.col-12.flex-column
+  .d-flex.col-12.justify-content-center
+    h1.text-center Welcome to Lightarti
+  .d-flex.mt-4
+    = turbo_frame_tag "folder", src: folders_path, class: "col-4" do
+      h1 Loading folders...
+    / = turbo_frame_tag "test", src: folder_path(1), class: "col-8" do
+    /   h1 Loading test..., 
+    
