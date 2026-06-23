@@ -38,6 +38,7 @@ services:
     - .env
     volumes:
       - ./projekt:/rails
+      - /var/lib/lightarti/storage:/var/lib/lightarti/storage
     ports:
       - "5555:3000"
     depends_on:
