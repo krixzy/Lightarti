@@ -34,13 +34,13 @@ services:
     container_name: lightarti
     restart: unless-stopped
     build: projekt/
-    env_file:
-    - .env
     volumes:
       - ./projekt:/rails
       - /var/lib/lightarti/storage:/var/lib/lightarti/storage
     ports:
       - "5555:3000"
+    environment:
+      RAILS_ENV: ${RAILS_ENV}
     depends_on:
       postgres:
         condition: service_healthy
