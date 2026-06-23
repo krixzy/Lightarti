@@ -41,6 +41,9 @@ services:
       - "5555:3000"
     environment:
       RAILS_ENV: ${RAILS_ENV}
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      LOCAL_FILE_LOCATION: ${LOCAL_FILE_LOCATION}
     depends_on:
       postgres:
         condition: service_healthy
